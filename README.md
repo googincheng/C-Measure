@@ -5,13 +5,13 @@ Thanks to utom for the excllent job on ***sketch measure***: https://github.com/
 For some reasons, utom won't maintain ***sketch measure*** anymore. That is why C-Measure appears.
 
 ## Features
-### Infinite canvas 
+### - Infinite canvas 
 - What you see is what you get!
 ![infinite-canvas.png](https://github.com/googincheng/C-Measure/blob/master/demo/infinite-canvas.png "infinite-canvas.png")
-### File size optimize
+### - File size optimize
 - 2~5x file size smaller than ***sketch measure***!
 ![file-size-optimize.png](https://github.com/googincheng/C-Measure/blob/master/demo/file-size-optimize.png "file-size-optimize.png")
-### Image download
+### - Image download
 - This feature is enabled when upload the whole folder to server.
 ![download-slices.png](https://github.com/googincheng/C-Measure/blob/master/demo/download-slices.png "download-slices.png")
 
