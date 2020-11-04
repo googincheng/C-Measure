@@ -16,9 +16,8 @@ For some reasons, utom won't maintain ***sketch measure*** anymore. That is why 
 ![download-slices.png](https://github.com/googincheng/C-Measure/blob/master/demo/download-slices.png "download-slices.png")
 
 ## Install
-- Download ***C-Measure.sketchplugin.zip***
-- unzip
-- double click to install
+- Download the whole code
+- double click ***C-Measure.sketchplugin*** to install
 
 ## How-To
 Refer to Sketch Measure:
