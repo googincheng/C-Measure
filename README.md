@@ -1,7 +1,7 @@
 # C -Measure
 
 ## Preface
-Thanks to utom for the excllent job on ***sketch measure***: https://github.com/utom .
+Thanks utom for the excllent job on ***sketch measure***: https://github.com/utom .
 For some reasons, utom won't maintain ***sketch measure*** anymore. That is why C-Measure appears.
 
 ## Features
