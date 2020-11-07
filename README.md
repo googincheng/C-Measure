@@ -32,3 +32,7 @@ https://github.com/utom/sketch-measure
 - @mkl87, @Skykai521, @whyfind and @Nora
 - @Kai and @Zih-Hong
 - And Other
+
+## More
+This's a great alternative with clean, beatiful code.@qjebbs
+https://github.com/qjebbs/sketch-meaxure
