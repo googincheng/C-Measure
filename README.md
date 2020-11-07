@@ -34,5 +34,6 @@ https://github.com/utom/sketch-measure
 - And Other
 
 ## More
-This's a great alternative with clean, beatiful code.@qjebbs
+This's a great alternative repo with clean, beatiful code.I'm not familliar with TypeScript.Any merge is welcome! 
+[@qjebbs](https://github.com/qjebbs/sketch-meaxure "@qjebbs")
 https://github.com/qjebbs/sketch-meaxure
