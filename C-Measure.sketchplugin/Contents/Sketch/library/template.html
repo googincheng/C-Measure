@@ -1846,11 +1846,19 @@ var I18N = {},
                     var urls = [];
 
                     $.each(self.project.slices, function( index, sliceLayer ){
-                        if(sliceLayer.exportable.length > 0){
+                        if(sliceLayer.exportable.length > 0 && sliceLayer.exportable.length < 2){
                             var asset = JSON.parse( JSON.stringify( sliceLayer.exportable ) ).pop();
                             urls.push('assets/' + asset.path );
                         }
+                        else if(sliceLayer.exportable.length > 1){
+                          $.each(sliceLayer.exportable, function( index2 ){
+                            var asset = JSON.parse( JSON.stringify( sliceLayer.exportable[index2] ) );
+                            urls.push('assets/' + asset.path );
+                          });
+                        }
                     });
+
+                    console.log(urls);
 
                     var zipname = "assets";
                     //The function is called

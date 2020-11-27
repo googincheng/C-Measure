@@ -1,5 +1,5 @@
 {
-    "author": "utom,Gold Harvest",
+    "author": "utom",
     "commands" : [
         {
             "name": "Toolbar",
@@ -172,13 +172,13 @@
               ]
             }
         ],
-        "title" : "C-Measure"
+        "title" : "Sketch Measure"
     },
-    "identifier": "com.harvest.measure",
-    "appcast": "",
-    "homepage": "",
-    "version": "3.0.2",
+    "identifier": "com.utom.measure",
+    "appcast": "https://raw.githubusercontent.com/utom/sketch-measure/master/appcast.xml",
+    "homepage": "http://utom.design/measure/",
+    "version": "2.8.1",
     "description" : "Make it a fun to create spec for developers and teammates",
-    "authorEmail" : "googincheng@gmail.com",
-    "name" : "C-Measure"
+    "authorEmail" : "utombox@gmail.com",
+    "name" : "Sketch Measure"
 }
