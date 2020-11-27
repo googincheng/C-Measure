@@ -407,7 +407,7 @@ var I18N = {},
                     '</div>',
                     '<div class="header-center">',
                         '<div id="zoom" class="zoom-widget"></div>',
-                        '<text style="margin-top:21px;margin-Right:auto">(以选中画板为中心进行缩放)</text>',
+                        '<text style="margin-top:21px;margin-Right:auto">(以选中画板为中心进行缩放 Zoom with the selected artboard as the center)</text>',
                         '<div class="show-notes">',
                             '<label for="show-notes">' + _('NOTES') + '</label>',
                             '<div class="slidebox">',
@@ -801,7 +801,7 @@ var I18N = {},
             var self = this,
                 sliceListHTML = [];
                 //TODO:切图下载
-            sliceListHTML.push('<a href="#" class="asset-download">下载所有切图</a>');
+            sliceListHTML.push('<a href="#" class="asset-download">Download All Slices</a>');
             sliceListHTML.push('<ul class="asset-list">');
             $.each(this.project.slices, function( index, sliceLayer ){
                 if(sliceLayer.exportable.length > 0){
@@ -1066,7 +1066,6 @@ var I18N = {},
                 html = [];
             $.each(self.current.layers, function(index, layer) {
                   if(layer.objectID == self.selectedIndex.dataIndex){
-                    console.log("找到图层");
                     layerData=layer;
                     return false;
                   }
@@ -1839,18 +1838,26 @@ var I18N = {},
             $('#slices')
                 .on('click','.asset-download', function(){
                     gtag('event', 'download image');
-                    $('.asset-download').html("正在打包文件,请稍后...");
+                    $('.asset-download').html("Compressing,waiting...");
                     var zip = new JSZip();
                     var count = 0;
                     var zipFilename = "zipFilename.zip";
                     var urls = [];
 
                     $.each(self.project.slices, function( index, sliceLayer ){
-                        if(sliceLayer.exportable.length > 0){
+                        if(sliceLayer.exportable.length > 0 && sliceLayer.exportable.length < 2){
                             var asset = JSON.parse( JSON.stringify( sliceLayer.exportable ) ).pop();
                             urls.push('assets/' + asset.path );
                         }
+                        else if(sliceLayer.exportable.length > 1){
+                          $.each(sliceLayer.exportable, function( index2 ){
+                            var asset = JSON.parse( JSON.stringify( sliceLayer.exportable[index2] ) );
+                            urls.push('assets/' + asset.path );
+                          });
+                        }
                     });
+
+                    console.log(urls);
 
                     var zipname = "assets";
                     //The function is called
@@ -1874,7 +1881,7 @@ var I18N = {},
                               },
                               function updateCallback(metadata) {
                                 if(metadata.percent.toFixed(0)-100 < 0.1) {
-                                    $('.asset-download').html("下载所有切图");
+                                    $('.asset-download').html("Download All Slices");
                                   }
                               }).then(function(content) {
                                 saveAs(content, name);

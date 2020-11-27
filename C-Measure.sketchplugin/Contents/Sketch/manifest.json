@@ -177,7 +177,7 @@
     "identifier": "com.harvest.measure",
     "appcast": "",
     "homepage": "",
-    "version": "3.0.2",
+    "version": "3.0.3",
     "description" : "Make it a fun to create spec for developers and teammates",
     "authorEmail" : "googincheng@gmail.com",
     "name" : "C-Measure"

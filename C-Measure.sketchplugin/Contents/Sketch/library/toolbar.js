@@ -27,7 +27,7 @@ class ToolBar {
   }
 
   render(){
-    var identifier = 'design.utom.SpecPicker';
+    var identifier = 'design.harvest.SpecPicker';
     var threadDictionary = NSThread.mainThread().threadDictionary();
 
     if (threadDictionary[identifier]) {
