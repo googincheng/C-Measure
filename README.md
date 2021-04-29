@@ -33,7 +33,7 @@ https://github.com/utom/sketch-measure
 - @Kai and @Zih-Hong
 - And Other
 
-## Contributor
+## FAQ
 If you meet any problem about SMFramework, please check this option.
 ![SMFramework%20enable.png](https://github.com/googincheng/C-Measure/blob/master/demo/SMFramework%20enable.png?raw=true)
 
