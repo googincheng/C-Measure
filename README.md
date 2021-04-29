@@ -33,6 +33,10 @@ https://github.com/utom/sketch-measure
 - @Kai and @Zih-Hong
 - And Other
 
+## Contributor
+If you meet any problem about SMFramework, please check this option.
+![SMFramework%20enable.png](https://github.com/googincheng/C-Measure/blob/master/demo/SMFramework%20enable.png?raw=true)
+
 ## More
 This's a great alternative repo with clean, beatiful code.I'm not familliar with TypeScript.Any merge is welcome! 
 [@qjebbs](https://github.com/qjebbs/sketch-meaxure "@qjebbs")
