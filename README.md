@@ -15,6 +15,9 @@ For some reasons, utom won't maintain ***sketch measure*** anymore. That is why 
 - This feature is enabled when upload the whole folder to server.
 ![download-slices.png](https://github.com/googincheng/C-Measure/blob/master/demo/download-slices.png "download-slices.png")
 
+## Acquire
+- Sketch version > V69+
+
 ## Install
 - Download the whole code
 - double click ***C-Measure.sketchplugin*** to install
