@@ -446,15 +446,33 @@ var I18N = {},
                 '<div id="message" class="message"></div>',
                 '<div id="cursor" class="cursor"></div>'
             ].join(''));
+            console.log("zoom start");
             this.zoom();
+            console.log("zoom end");
+            console.log("unit start");
             this.unit();
+            console.log("unit end");
+            console.log("artboards start");
             this.artboards();
+            console.log("artboards end");
+            console.log("slices start");
             this.slices();
+            console.log("slices end");
+            console.log("colors start");
             this.colors();
+            console.log("colors end");
+            console.log("screen start");
             this.screen();
+            console.log("screen end");
+            console.log("layers start");
             this.layers();
+            console.log("layers end");
+            console.log("notes start");
             this.notes();
+            console.log("notes end");
+            console.log("events start");
             this.events();
+            console.log("events end");
         },
         screen: function() {
             var self = this;
@@ -770,13 +788,12 @@ var I18N = {},
         layers: function() {
             var self = this,
                 layersHTML = [];
-
             $.each(this.project.artboards, function(indexOfArtboard, artboard){
               $.each(artboard.layers, function(index, layer) {
-                  var x = self.zoomSize( layer.rect.x ),
-                      y = self.zoomSize( layer.rect.y ),
-                      width = self.zoomSize( layer.rect.width ),
-                      height = self.zoomSize( layer.rect.height ),
+                  var x = Math.round(self.zoomSize( layer.rect.x )),
+                      y = Math.round(self.zoomSize( layer.rect.y )),
+                      width = Math.round(self.zoomSize( layer.rect.width )),
+                      height = Math.round(self.zoomSize( layer.rect.height )),
                       classNames = ['layer'];
 
                   classNames.push('layer-' + layer.objectID);
@@ -795,6 +812,7 @@ var I18N = {},
             });
         },
         slices: function(){
+            //TODO fix slice crash(not mark exportable)
             if(!this.project.slices){
                 return false;
             }
@@ -1477,6 +1495,7 @@ var I18N = {},
               y: 0
             };
             var wheeling;
+            var isCommandKeyDown = false;
             $('body')
                 .on({
                         click: function( event ){
@@ -1564,25 +1583,27 @@ var I18N = {},
                     gtag('event', 'zoomout btn');
                 });
             // TODO: 滚动缩放
-            // $(window).on('mousewheel', function (e) {
-            //       if (!wheeling) {
-            //         console.log('start wheeling!');
-            //       }
-            //
-            //       clearTimeout(wheeling);
-            //       wheeling = setTimeout(function() {
-            //         console.log('stop wheeling!');
-            //         wheeling = undefined;
-            //
-            //         // reset wheeldelta
-            //         wheeldelta.x = 0;
-            //         wheeldelta.y = 0;
-            //       }, 250);
-            //
-            //       wheeldelta.x += e.deltaFactor * e.deltaX;
-            //       wheeldelta.y += e.deltaFactor * e.deltaY;
-            //       console.log(wheeldelta);
-            // });
+            $(window).on('mousewheel', function (e) {
+                if(isCommandKeyDown){
+                  if (!wheeling) {
+                    console.log('start Zoom!');
+                  }
+
+                  clearTimeout(wheeling);
+                  wheeling = setTimeout(function() {
+                    console.log('stop Zoom!');
+                    wheeling = undefined;
+
+                    // reset wheeldelta
+                    wheeldelta.x = 0;
+                    wheeldelta.y = 0;
+                  }, 250);
+
+                  wheeldelta.x += 0.1 * e.originalEvent.deltaX;
+                  wheeldelta.y += 0.1 * e.originalEvent.deltaY;
+                  // console.log(wheeldelta);
+                }
+            });
             $(window)
                 .keydown(function(event){
                     if((event.ctrlKey || event.metaKey) && (event.which == 187 || event.which == 189 || event.which == 48)) {
@@ -1613,6 +1634,10 @@ var I18N = {},
                     else if(event.which == 18){
                         $('#screen').addClass('percentage-mode');
                         gtag('event', 'add percentage mode');
+                    }
+                    else if(event.which == 93){
+                        console.log("按下command键");
+                        isCommandKeyDown = true;
                     }
                 })
                 .keyup(function(event){
@@ -1948,6 +1973,7 @@ var I18N = {},
 })(window);
 $(function(){ SMApp(<!-- data -->) });
     -->
+
     </script>
 
 
